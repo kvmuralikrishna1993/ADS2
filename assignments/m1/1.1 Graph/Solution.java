@@ -40,7 +40,7 @@ interface Graph {
      * @return     True if has edge, False otherwise.
      */
     boolean hasEdge(int v, int w);
-}
+    }
 /**
  * { item_ solution }.
  */
@@ -70,7 +70,7 @@ public final class Solution {
                     Integer.parseInt(tokens[1]));
             }
             System.out.println(list.display(keys));
-        } else if (method.equals("Matrix")){
+        } else if (method.equals("Matrix")) {
             GraphMatrix matrix = new GraphMatrix(v);
             for (int i = 0; i < e; i++) {
                 String[] tokens = scan.nextLine().split(" ");
