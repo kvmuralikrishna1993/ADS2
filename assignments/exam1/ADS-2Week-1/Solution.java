@@ -41,11 +41,9 @@ class PageRank {
 					double sum = 0.0;
 					for(int each : adj) {
 						sum += pr.get(each)/graph.outdegree(each);
-						//System.out.println(sum);
 					}
 					pr.put(j,sum);
 				}
-				//System.out.println("---------------------");
 			}
 		}
 		toString(v);
