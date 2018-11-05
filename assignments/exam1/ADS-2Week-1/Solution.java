@@ -1,16 +1,21 @@
 import java.util.Scanner;
 import java.util.HashMap;
-import java.util.Map;
 /**
  * Class for page rank.
  */
 class PageRank {
-    HashMap<Integer, Double> pr = new HashMap<>();
-    HashMap<Integer, Double> tr = new HashMap<>();
+    /**
+     * { var_page_map }.
+     */
+    private HashMap<Integer, Double> pr = new HashMap<>();
+    /**
+     * { var_temp_map }.
+     */
+    private HashMap<Integer, Double> tr = new HashMap<>();
     /**
      * { var_description }
      */
-    Digraph graph;
+    private Digraph graph;
     /**
      * Constructs the object.
      *
@@ -28,7 +33,7 @@ class PageRank {
         Boolean flag = false;
         Digraph reverse = graph.reverse();
         final int iterate = 1000;
-        final Double intial = 1.0/v;
+        final Double intial = 1.0 / v;
         //intialisation (iteration 1)
         for(int j = 0; j < v; j++) {
             pr.put(j, intial);
@@ -38,21 +43,21 @@ class PageRank {
             tr.put(entry.getKey(), entry.getValue());
         }
         //iterations 999.
-        for(int i = 0; i < iterate; i++) {
+        for (int i = 0; i < iterate; i++) {
             //calculating:
-            for(int j = 0; j < v; j++) {
+            for (int j = 0; j < v; j++) {
                 //incoming calls.
                 Iterable<Integer> adj = reverse.adj(j);
                 double sum = 0.0;
                 // all incoming values for each page.
-                for(int each : adj) {
+                for (int each : adj) {
                     flag = true;
                     sum += tr.get(each) * 1.0 / (graph.outdegree(each) * 1.0);
                 }
                 pr.put(j, sum);
             }
             //copying original to temp
-            if(flag) {
+            if (flag) {
                 for (HashMap.Entry<Integer, Double> entry : pr.entrySet()) {
                     tr.put(entry.getKey(), entry.getValue());
                 }
@@ -84,6 +89,12 @@ class WebSearch {
  * Class for solution.
  */
 public class Solution {
+    /**
+     * Constructs the object.
+     */
+    private Solution() {
+
+    }
     /**
      * { function_main }.
      *
