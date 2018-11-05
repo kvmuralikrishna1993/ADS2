@@ -16,7 +16,7 @@ class PageRank {
      *
      * @param      digraph  The digraph
      */
-    PageRank(Digraph digraph) {
+    PageRank(final Digraph digraph) {
         this.graph = digraph;
     }
     /**
@@ -24,7 +24,7 @@ class PageRank {
      *
      * @param      v     { parameter_description }
      */
-    public void get(int v) {
+    public void get(final int v) {
         Boolean flag = false;
         Digraph reverse = graph.reverse();
         final int iterate = 1000;
@@ -47,7 +47,7 @@ class PageRank {
                 // all incoming values for each page.
                 for(int each : adj) {
                     flag = true;
-                    sum += (tr.get(each)*1.0)/(graph.outdegree(each)*1.0);
+                    sum += tr.get(each) * 1.0 / (graph.outdegree(each) * 1.0);
                 }
                 pr.put(j, sum);
             }
@@ -67,10 +67,10 @@ class PageRank {
      *
      * @param      v     { parameter_description }
      */
-    public void toString(int v) {
+    public void toString(final int v) {
         //System.out.println();
         for(int i = 0; i < v; i++) {
-            System.out.println(i+" "+"-"+" "+pr.get(i));
+            System.out.println(i + " " + "-" + " " + pr.get(i));
         }
     }
 }
@@ -89,7 +89,7 @@ public class Solution {
      *
      * @param      args  The arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         // read the first line of the input to get the number of vertices
         Scanner scan = new Scanner(System.in);
         int v = Integer.parseInt(scan.nextLine());
@@ -108,21 +108,15 @@ public class Solution {
         PageRank page = new PageRank(digraph);
         page.get(v);
         // Create page rank object and pass the graph object to the constructor
-        
         // print the page rank object
-        
         // This part is only for the final test case
-        
         // File path to the web content
         String file = "WebContent.txt";
-        
         // instantiate web search object
         // and pass the page rank object and the file path to the constructor
-        
         // read the search queries from std in
         // remove the q= prefix and extract the search word
         // pass the word to iAmFeelingLucky method of web search
         // print the return value of iAmFeelingLucky
-        
     }
 }
