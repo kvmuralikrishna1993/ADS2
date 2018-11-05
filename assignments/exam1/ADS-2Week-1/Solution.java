@@ -13,7 +13,7 @@ class PageRank {
      */
     private HashMap<Integer, Double> tr = new HashMap<>();
     /**
-     * { var_description }
+     * { var_graph }.
      */
     private Digraph graph;
     /**
@@ -35,7 +35,7 @@ class PageRank {
         final int iterate = 1000;
         final Double intial = 1.0 / v;
         //intialisation (iteration 1)
-        for(int j = 0; j < v; j++) {
+        for (int j = 0; j < v; j++) {
             pr.put(j, intial);
         }
         //copy intially to temp.
@@ -74,7 +74,7 @@ class PageRank {
      */
     public void toString(final int v) {
         //System.out.println();
-        for(int i = 0; i < v; i++) {
+        for (int i = 0; i < v; i++) {
             System.out.println(i + " " + "-" + " " + pr.get(i));
         }
     }
@@ -82,8 +82,7 @@ class PageRank {
 /**
  * Class for web search.
  */
-class WebSearch {
-    
+class WebSearch {   
 }
 /**
  * Class for solution.
@@ -110,7 +109,7 @@ public class Solution {
         Digraph digraph = new Digraph(v);
         for (int i = 0; i < v; i++) {
             String[] tokens = scan.nextLine().split(" ");
-            for(int j = 1; j < tokens.length; j++) {
+            for (int j = 1; j < tokens.length; j++) {
                 digraph.addEdge(Integer.parseInt(tokens[0]),
                 Integer.parseInt(tokens[j]));
             }
