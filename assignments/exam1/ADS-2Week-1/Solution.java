@@ -82,12 +82,12 @@ class PageRank {
 /**
  * Class for web search.
  */
-class WebSearch {   
+class WebSearch {
 }
 /**
  * Class for solution.
  */
-public class Solution {
+public final class Solution {
     /**
      * Constructs the object.
      */
