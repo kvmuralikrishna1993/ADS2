@@ -63,7 +63,7 @@ class PageRank {
      * @param      v     { parameter_description }
      */
     public void toString(int v) {
-        System.out.println();
+        //System.out.println();
         for(int i = 0; i < v; i++) {
             System.out.println(i+" "+"-"+" "+pr.get(i));
         }
