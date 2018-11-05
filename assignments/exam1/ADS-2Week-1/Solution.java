@@ -25,6 +25,7 @@ class PageRank {
      * @param      v     { parameter_description }
      */
     public void get(int v) {
+        Boolean flag = false;
         Digraph reverse = graph.reverse();
         final int iterate = 1000;
         final Double intial = 1.0/v;
@@ -45,13 +46,17 @@ class PageRank {
                 double sum = 0.0;
                 // all incoming values for each page.
                 for(int each : adj) {
+                    flag = true;
                     sum += (tr.get(each)*1.0)/(graph.outdegree(each)*1.0);
                 }
                 pr.put(j, sum);
             }
             //copying original to temp
-            for (HashMap.Entry<Integer, Double> entry : pr.entrySet()) {
-                tr.put(entry.getKey(), entry.getValue());
+            if(flag) {
+                for (HashMap.Entry<Integer, Double> entry : pr.entrySet()) {
+                    tr.put(entry.getKey(), entry.getValue());
+                }
+                flag = false;
             }
         }
         toString(v);
