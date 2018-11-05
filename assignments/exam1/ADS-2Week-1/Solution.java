@@ -6,6 +6,7 @@ import java.util.Map;
  */
 class PageRank {
     HashMap<Integer, Double> pr = new HashMap<>();
+    HashMap<Integer, Double> tr = new HashMap<>();
     /**
      * { var_description }
      */
@@ -27,23 +28,30 @@ class PageRank {
         Digraph reverse = graph.reverse();
         final int iterate = 1000;
         final Double intial = 1.0/v;
-        //System.out.println(intial);
+        //intialisation (iteration 1)
+        for(int j = 0; j < v; j++) {
+            pr.put(j, intial);
+        }
+        //copy intially to temp.
+        for (HashMap.Entry<Integer, Double> entry : pr.entrySet()) {
+            tr.put(entry.getKey(), entry.getValue());
+        }
+        //iterations 999.
         for(int i = 0; i < iterate; i++) {
-            if (i == 0) {
-                //intialisation
-                for(int j = 0; j < v; j++) {
-                    pr.put(j, intial);
+            //calculating:
+            for(int j = 0; j < v; j++) {
+                //incoming calls.
+                Iterable<Integer> adj = reverse.adj(j);
+                double sum = 0.0;
+                // all incoming values for each page.
+                for(int each : adj) {
+                    sum += (tr.get(each)*1.0)/(graph.outdegree(each)*1.0);
                 }
-            } else {
-                //calculating:
-                for(int j = 0; j < v; j++) {
-                    Iterable<Integer> adj = reverse.adj(j);
-                    double sum = 0.0;
-                    for(int each : adj) {
-                        sum += pr.get(each)/graph.indegree(each);
-                    }
-                    pr.put(j,sum);
-                }
+                pr.put(j, sum);
+            }
+            //copying original to temp
+            for (HashMap.Entry<Integer, Double> entry : pr.entrySet()) {
+                tr.put(entry.getKey(), entry.getValue());
             }
         }
         toString(v);

@@ -1,0 +1,9 @@
+[master 94c6494] "ads2_m6_a1_1: 0/12 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 0/1 "
+ 5 files changed, 532 insertions(+), 115 deletions(-)
+ rewrite assignments/exam1/ADS-2Week-1/Solution.java (77%)
+ create mode 100644 assignments/exam1/ADS-2Week-1/check_style_errors.txt
+ create mode 100644 assignments/exam1/ADS-2Week-1/git_output.txt
+ create mode 100644 assignments/exam1/ADS-2Week-1/testcases_output.txt
+To https://github.com/kvmuralikrishna1993/ADS2.git
+   d21e527..94c6494  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
