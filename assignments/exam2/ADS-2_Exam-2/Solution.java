@@ -50,7 +50,9 @@ public final class Solution {
             if (!djsp.hasPathTo(Integer.parseInt(path[1]))) {
                 System.out.println("No Path Found.");
             } else {
-                System.out.println(djsp.distTo(Integer.parseInt(path[1])));
+                DijkstraUndirectedSP djspv = new DijkstraUndirectedSP(graph,
+                Integer.parseInt(path[0]));
+                System.out.println(djspv.distTo(Integer.parseInt(path[1])));
             }
             break;
         case "ViaPaths":
