@@ -57,18 +57,28 @@ public final class Solution {
             double d1 = 0.0;
             double d2 = 0.0;
             String[] paths = scan.nextLine().split(" ");
-            DijkstraSP djspv = new DijkstraSP(graph1,
+            DijkstraUndirectedSP djspv = new DijkstraUndirectedSP(graph,
                 Integer.parseInt(paths[0]));
             if (!djspv.hasPathTo(Integer.parseInt(paths[1]))) {
                 System.out.println("No Path Found.");
             } else {
+                String way = "";
                 d1 = djspv.distTo(Integer.parseInt(paths[1]));
-                djspv = new DijkstraSP(graph1, Integer.parseInt(paths[1]));
+                Iterable<Edge> viaway  = djspv.pathTo(Integer.parseInt(paths[1]));
+                for (Edge each: viaway) {
+                    way += each.getV() + " ";
+                }
+                djspv = new DijkstraUndirectedSP(graph, Integer.parseInt(paths[1]));
                 if (!djspv.hasPathTo(Integer.parseInt(paths[2]))) {
                     System.out.println("No Path Found.");
                 } else {
                     d2 = djspv.distTo(Integer.parseInt(paths[2])) + d1;
                     System.out.println(d2);
+                    viaway  = djspv.pathTo(Integer.parseInt(paths[2]));
+                    for (Edge each: viaway) {
+                        way += each.getV() + " ";
+                    }
+                    System.out.println(way);
                 }
             }
             break;
