@@ -78,14 +78,13 @@ public final class Solution {
                     System.out.println(d2);
                     viaway  = djspv.pathTo(Integer.parseInt(paths[2]));
                     for (Edge each: viaway) {
-                        way += each.getV() + " ";
+                        System.out.print(each.getV() + " ");
                     }
-                    System.out.println(way);
+                    System.out.println();
                 }
             }
             break;
-
-        default:
+            default:
             break;
         }
 
