@@ -66,11 +66,13 @@ public final class Solution {
             } else {
                 String way = "";
                 d1 = djspv.distTo(Integer.parseInt(paths[1]));
-                Iterable<Edge> viaway  = djspv.pathTo(Integer.parseInt(paths[1]));
+                Iterable<Edge> viaway  = djspv.pathTo(
+                            Integer.parseInt(paths[1]));
                 for (Edge each: viaway) {
                     way += each.getV() + " ";
                 }
-                djspv = new DijkstraUndirectedSP(graph, Integer.parseInt(paths[1]));
+                djspv = new DijkstraUndirectedSP(graph,
+                    Integer.parseInt(paths[1]));
                 if (!djspv.hasPathTo(Integer.parseInt(paths[2]))) {
                     System.out.println("No Path Found.");
                 } else {
