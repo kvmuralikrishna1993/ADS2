@@ -23,7 +23,7 @@ public final class Solution {
             int a2 = Integer.parseInt(tokens[1]);
             percolation.open(a1, a2);
         }
-        System.out.println(percolation.percolates() &&
-                            percolation.numberOfOpenSites() != 0);
+        System.out.println(percolation.percolates()
+            && percolation.numberOfOpenSites() != 0);
     }
 }
