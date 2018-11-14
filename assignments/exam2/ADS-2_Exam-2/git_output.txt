@@ -1,0 +1,8 @@
+[master ff3991e] "ads2_m12_a1_1: 5/6 testcases passed. Cannot run hidden testcases as Server is unreachablecheck_style score: 1/1 "
+ 5 files changed, 76 insertions(+), 2 deletions(-)
+ create mode 100644 assignments/exam2/ADS-2_Exam-2/check_style_errors.txt
+ create mode 100644 assignments/exam2/ADS-2_Exam-2/git_output.txt
+ create mode 100644 assignments/exam2/ADS-2_Exam-2/testcases_output.txt
+To https://github.com/kvmuralikrishna1993/ADS2.git
+   a940231..ff3991e  master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.

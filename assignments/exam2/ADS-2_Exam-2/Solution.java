@@ -61,28 +61,34 @@ public final class Solution {
             String[] paths = scan.nextLine().split(" ");
             DijkstraUndirectedSP djspv = new DijkstraUndirectedSP(graph,
                 Integer.parseInt(paths[0]));
+            // check a to b
             if (!djspv.hasPathTo(Integer.parseInt(paths[1]))) {
                 System.out.println("No Path Found.");
+            // if true dist a --> b = d1
             } else {
                 String way = "";
                 d1 = djspv.distTo(Integer.parseInt(paths[1]));
+            // creating path a --> b
                 Iterable<Edge> viaway  = djspv.pathTo(
                             Integer.parseInt(paths[1]));
                 for (Edge each: viaway) {
                     way += each.getV() + " ";
                 }
+            // check b --> c
                 djspv = new DijkstraUndirectedSP(graph,
                     Integer.parseInt(paths[1]));
                 if (!djspv.hasPathTo(Integer.parseInt(paths[2]))) {
                     System.out.println("No Path Found.");
+            // true dist b --> c = d2
                 } else {
                     d2 = djspv.distTo(Integer.parseInt(paths[2])) + d1;
                     System.out.println(d2);
+            // creating path b --> c
                     viaway  = djspv.pathTo(Integer.parseInt(paths[2]));
                     for (Edge each: viaway) {
-                        System.out.print(each.getV() + " ");
+                        way += each.getV() + " ";
                     }
-                    System.out.println();
+                    System.out.println(way);
                 }
             }
             break;
