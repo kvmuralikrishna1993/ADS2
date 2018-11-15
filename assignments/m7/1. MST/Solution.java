@@ -21,8 +21,8 @@ public final class Solution {
         EdgeWeightedGraph graph = new EdgeWeightedGraph(vertices);
         for (int i = 0; i < edges; i++) {
             String[] inputs = scan.nextLine().split(" ");
-            Edge addedge = new Edge(Integer.parseInt(inputs[0]), Integer.parseInt(
-                                   inputs[1]), Double.parseDouble(inputs[2]));
+            Edge addedge = new Edge(Integer.parseInt(inputs[0]),
+                Integer.parseInt(inputs[1]), Double.parseDouble(inputs[2]));
             graph.addEdge(addedge);
         }
         LazyPrimMST lazymst = new LazyPrimMST(graph);
