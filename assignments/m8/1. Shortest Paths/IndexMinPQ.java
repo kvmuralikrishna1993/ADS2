@@ -139,7 +139,6 @@ public class IndexMinPQ<Key extends Comparable<Key>>
 
   /**
    * Removes a minimum key and returns its associated index.
-   * 
    * Complexity log N
    * @return an index associated with a minimum key
    * @throws NoSuchElementException if this priority queue is empty
