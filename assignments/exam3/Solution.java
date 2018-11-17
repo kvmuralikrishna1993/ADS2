@@ -183,17 +183,21 @@ class T9 {
 	// return all possibilities(words), find top k with highest frequency.
 	public Iterable<String> getSuggestions(Iterable<String> words, int k) {
 		BinarySearchST<String, Integer> b2 = new BinarySearchST<String, Integer>();
+		MaxPQ maxpq = new MaxPQ(k);
 		//each word prefix
 		for (String each : words) {
-			Iterable<String> list = table.keysWithPrefix(each);
-			MaxPQ maxpq = new MaxPQ(k);
-			maxpq.insert(each);
+			maxpq.insert(st.get(each));
 		}
-
 			String[] array = new String[k];
 			for (int i = 0; i < k; i++) {
-				array[i] = b2.max().toString();
-				b2.deleteMax();
+				String ar = maxpq.max().toString();
+				for (String each : words) {
+					if (ar.equals(st.get(each))) {
+						array[i] = each;
+						break; 
+					}
+				}
+				maxpq.delMax();
 			}
 			return Arrays.asList(array);
 		}
