@@ -4,11 +4,11 @@ import java.util.Arrays;
  * Class for lsd.
  */
 class LSD {
-    /**.
-     * { sort using LSD alg. }
-     * {time complexity is O(W*N)}
-     * @param      a     { array }
-     * @param      w     { string len }
+    /**
+     * { function_sort }.
+     *
+     * @param      stringarray   The stringarray
+     * @param      stringlength  The stringlength
      */
     public void sort(final String[] stringarray, final int stringlength) {
         /**.
