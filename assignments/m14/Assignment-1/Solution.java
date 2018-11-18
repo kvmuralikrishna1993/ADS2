@@ -16,8 +16,8 @@ final class Solution {
      * @param      args  The arguments
      */
     public static void main(final String[] args) {
-    	In in = new In("/Files/dictionary-algs4.txt");
-    	String[] words = in.readAllStrings();
+        In in = new In("/Files/dictionary-algs4.txt");
+        String[] words = in.readAllStrings();
         TST<Integer> tree = new TST<Integer>();
         for (int i = 0; i < words.length; i++) {
             String[] suffix = new String[words[i].length()];
