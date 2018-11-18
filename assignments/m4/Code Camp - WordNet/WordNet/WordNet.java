@@ -48,7 +48,8 @@ public class WordNet {
         for (String line : hyp.readAllLines()) {
             String[] temp = line.split(",");
             for (int i = 1; i < temp.length; i++) {
-                graph.addEdge(Integer.parseInt(temp[0]), Integer.parseInt(temp[i]));
+                graph.addEdge(Integer.parseInt(temp[0]),
+                    Integer.parseInt(temp[i]));
             }
         }
         int count = 0;
