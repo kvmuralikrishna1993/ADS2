@@ -109,7 +109,7 @@ public class BoggleSolver {
         return tst.keyWithPrefix(str);
     }
     /**
-     * Determines if word.
+     * check if word is exists.
      *
      * @param      str   The string
      *
@@ -122,9 +122,9 @@ public class BoggleSolver {
      * { dfs of each letter in recursive }.
      *
      * @param      string   The string
-     * @param      b     { parameter_description }
-     * @param      s     { parameter_description }
-     * @param      m     { parameter_description }
+     * @param      b     { board }
+     * @param      s     { i }
+     * @param      m     { j }
      */
     private void dfs(final String string, final BoggleBoard b,
                                             final int s, final int m) {
