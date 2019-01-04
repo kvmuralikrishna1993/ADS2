@@ -48,12 +48,8 @@ public class Solution {
 				}
 				StdOut.println("Score = " + score);
 			} catch (Exception ex) {
-				if (ex == null) {
-					System.out.println("board is null");	
-				} else {
-					System.out.println(ex);
-				}
-				
+				System.out.println("board is null");	
+								
 			}
 			break;
 		}
