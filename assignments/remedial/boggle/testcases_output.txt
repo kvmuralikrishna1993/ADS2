@@ -64,11 +64,11 @@ Score = 68
 Your Output: 
 Score = 68
 ----------------------------------------
-########## Testcase 11: Failed ##########
+########## Testcase 11: Passed ##########
 Expected Output: 
 Score = 147
 Your Output: 
-
+Score = 147
 ----------------------------------------
 ########## Testcase 12: Passed ##########
 Expected Output: 
@@ -172,9 +172,9 @@ Score = 32175
 Your Output: 
 Score = 32175
 ----------------------------------------
-########## Testcase 29: Failed ##########
+########## Testcase 29: Passed ##########
 Expected Output: 
 board is null
 Your Output: 
-java.lang.NullPointerException
+board is null
 ----------------------------------------
