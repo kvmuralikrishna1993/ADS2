@@ -24,10 +24,6 @@ public class BoggleSolver {
      */
     private int count;
     /**
-     * { queue object }.
-     */
-    private Queue<String> queue;
-    /**
      * { set }.
      */
     private HashSet<String> set;
@@ -41,10 +37,8 @@ public class BoggleSolver {
         set = new HashSet<String>();
         tst = new TST<Integer>();
         for (String word : dictionary) {
-            // map.put(word, false);
             tst.put(word, count++);
         }
-        queue = new Queue<String>();
     }
     /**
      * { checks everyletter in board }.
